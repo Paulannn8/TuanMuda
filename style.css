@@ -1,0 +1,49 @@
+header {
+  background: linear-gradient(15deg, #06928b, #1ec5d1, #1dede2);
+  color: white;
+  height: 70vh;
+}   
+
+/* Navbar Transparan */
+.custom-navbar {
+  background-color: rgba(227, 224, 224, 0.356); /* Putih transparan */
+  backdrop-filter: blur(10px); /* Efek blur kaca */
+  -webkit-backdrop-filter: blur(10px); /* Untuk Safari */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.053);
+  transition: background-color 0.3s ease;
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+  color: #000000 !important; /* Warna teks */
+  font-weight: 500;
+}
+
+.custom-navbar .nav-link:hover {
+  color: black !important; /* Warna hover */
+}
+
+/* Tambahkan efek solid saat discroll */
+.custom-navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.btn {
+    background-color: rgb(12, 197, 77);
+}
+
+/* RESPONSIVE TABLET (iPad) */
+@media (max-width: 1024px) and (min-width: 768px) {
+
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 767px) {
+    header {
+        height: 50vh;
+        margin-top: 0px;
+    }
+    .row {
+        padding-left: 15px;
+    }
+}
