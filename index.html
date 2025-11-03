@@ -4,27 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TuanMuda</title>
+
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
     />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <!-- navbar -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-sm fixed-top custom-navbar">
-      <div class="container">
-        <a href="#" class="navbar-brand">TuanMuda</a>
+      <div class="container-fluid">
+        <a href="#header" class="navbar-brand">TuanMuda</a>
+
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,53 +45,651 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a href="#about" class="nav-link">About Us</a>
+              <a href="#about" class="nav-link">About</a>
             </li>
             <li class="nav-item">
               <a href="#services" class="nav-link">Services</a>
             </li>
             <li class="nav-item">
-              <a href="#products" class="nav-link">Top Up</a>
+              <a href="#products" class="nav-link">Products</a>
             </li>
             <li class="nav-item">
-              <a href="#portfolio" class="nav-link">Testimonial</a>
+              <a href="#testimonial" class="nav-link">Testimonial</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- header -->
-    <header class="bg-primary d-flex align-items-center text-white">
-      <div class="container">
+    <!-- Header -->
+    <header
+      id="header"
+      class="header-section d-flex align-items-center text-black"
+    >
+      <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="col-md-5">
-            <h1 class="header-title">
-              Top Up game murah <br />aman dan terpercaya
-            </h1>
-            <p>Top Up game favoritmu tanpa harus ribet <br />hanya disini</p>
-            <div class="rounded-2 d-flex mb-3 gap-3">
-              <form action="#aplikasi">
-                <button class="btn text-light">Pilih Aplikasi</button>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-7">
+          <div class="col-md-6 text-md-start">
+            <h1>Top Up game murah <br />aman dan terpercaya</h1>
+            <p>
+              Top Up game, aplikasi bahkan <br />
+              pulsa tanpa ribet hanya di sini!
+            </p>
+            <form action="#products">
+              <button class="btn gold text-light mt-1">Mulai Top Up</button>
+            </form>
             <img
-              src="assets/testi1.png"
+              src="assets/angela kishin densetsu.png"
               alt="Header Image"
-              class="img-fluid"
-              style="width: 50%"
+              class="hero-img"
             />
           </div>
         </div>
       </div>
     </header>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+    <!-- About -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row-about row align-items-center">
+          <div class="img-about col-md-6 text-center mb-md-0">
+            <img src="assets/tuanMuda.png" alt="Tentang Kami" />
+          </div>
+          <div class="text-about col-md-6">
+            <h3 class="fw-semibold">Tentang Kami</h3>
+            <p class="p-about">
+              TuanMuda adalah layanan top up yang hadir untuk memudahkan kamu
+              melakukan top up game, aplikasi, dan pulsa dengan cepat, aman, dan
+              terpercaya.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3">
+              <div class="stat-card text-center flex-fill">
+                <h4 class="mb-0">2</h4>
+                <p class="mb-0 mt-1">Tahun<br />Berjalan</p>
+              </div>
+              <div class="stat-card text-center flex-fill">
+                <h4 class="mb-0">5+</h4>
+                <p class="mb-0 mt-1">Pilihan<br />Aplikasi</p>
+              </div>
+              <div class="stat-card text-center flex-fill">
+                <h4 class="mb-0">10k+</h4>
+                <p class="mb-0 mt-1">Pelanggan<br />Puas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg">
+      <!-- Services -->
+      <section id="services" class="py-5">
+        <div class="container text-center">
+          <h1 class="title mb-5">Kami Melayani</h1>
+          <div class="row justify-content-center g-4">
+            <div class="col-md-4 col-sm-6">
+              <div class="card card-service p-4 shadow-sm border-0 rounded-4">
+                <div class="card-body">
+                  <i class="bi bi-controller display-5"></i>
+                  <h5 class="mt-3 fw-semibold">Top Up Game</h5>
+                  <p>Harga murah, transaksi cepat, 100% legal</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="card card-service p-4 shadow-sm border-0 rounded-4">
+                <div class="card-body">
+                  <i class="bi bi-lightning-charge display-5"></i>
+                  <h5 class="mt-3 fw-semibold">Entertainment</h5>
+                  <p>Top up mudah, hiburan puas tanpa batas</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="card card-service p-4 shadow-sm border-0 rounded-4">
+                <div class="card-body">
+                  <i class="bi bi-currency-exchange display-5"></i>
+                  <h5 class="mt-3 fw-semibold">Pulsa</h5>
+                  <p>Top up cepat, chat gak sempat putus</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- highlight -->
+      <div class="bg-highlight">
+        <section class="highlight container">
+          <div class="row align-items-center">
+            <div class="isi col-lg-6 text-light">
+              <h2 class="fw-bold mb-3">Top Up Game Populer</h2>
+              <p class="text-secondary mb-4">
+                Misi Top Up? Packet Bundle? Serahkan pada kami! Nikmati Top Up
+                game murah, cepat dan terpercaya hanya di TuanMuda.
+              </p>
+              <a href="#" class="btn btn-warning btn-lg fw-bold"
+                >Top Up Sekarang</a
+              >
+            </div>
+            <div class="col-lg-6 text-center">
+              <div class="p-4">
+                <img
+                  src="assets/high3.jpg"
+                  alt="Product"
+                  class="img-fluid alpa rounded-4"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- highlight bawah -->
+        <section class="highlight-bottom container py-5">
+          <div class="row align-items-center">
+            <div class="isi col-lg-6">
+              <img
+                src="assets/high2.jpg"
+                alt="Product"
+                class="img-fluid rounded-4"
+              />
+            </div>
+            <div class="isi col-lg-6 text-light mt-4 mt-lg-0">
+              <h2 class="fw-bold mb-3">Top Up Hiburan</h2>
+              <p class="text-secondary mb-4">
+                Ga perlu takut telat atau lupa berlangganan aplikasi favoritmu,
+                karena kami juga menyediakan top up untuk berbagai layanan
+                hiburan populer!
+              </p>
+              <a href="" class="btn btn-lg fw-bold"
+                >Berlangganan Sekarang</a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Products -->
+      <section id="products" class="py-5">
+        <div class="container text-center">
+          <h2 class="fw-bold mb-4">Game</h2>
+          <div class="category-container mb-4">
+            <button class="category-btn active" data-category="game">
+              Game
+            </button>
+            <button class="category-btn" data-category="entertainment">
+              Entertainment
+            </button>
+            <button class="category-btn" data-category="pulsa">Pulsa</button>
+          </div>
+          <div id="product-list"></div>
+        </div>
+      </section>
+
+      <!-- banner -->
+      <div class="banner my-5">
+        <div class="get-started-section">
+          <!-- Foto profil melayang -->
+          <img src="assets/splash1.jpg" class="profile-img img1" alt="" />
+          <img src="assets/splash2.jpg" class="profile-img img2" alt="" />
+          <img src="assets/splash3.jpg" class="profile-img img3" alt="" />
+          <img src="assets/splash4.jpg" class="profile-img img4" alt="" />
+          <img src="assets/splash5.jpg" class="profile-img img5" alt="" />
+          <img src="assets/splash6.jpg" class="profile-img img6" alt="" />
+          <img src="assets/splash7.jpg" class="profile-img img7" alt="" />
+
+          <!-- Konten utama -->
+          <h2>Transaksi Bermasalah?</h2>
+          <p>
+            Bagi para pelanggan yang mengalami kendala dalam transaksi, silakan
+            hubungi kami melalui WhatsApp. Kami siap membantu menyelesaikan
+            masalah Anda dengan cepat dan efisien.
+          </p>
+          <button class="btn">Hubungi Kami →</button>
+        </div>
+      </div>
+
+      <!-- testimonial -->
+      <section id="testimonial" class="testimonial-section">
+        <h2 class="text-center fw-bold mt-4">Testimonial</h2>
+        <div class="container">
+          <div class="row text-start g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4 col-sm-6">
+              <div class="testimonial-card">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <p class="testimonial-text">
+                  “Murah bgt top up disini, gacorrrr.”
+                </p>
+                <div class="profile">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    alt="amel icikiwir"
+                  />
+                  <h6>Amel Icikiwir</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4 col-sm-6">
+              <div class="testimonial-card">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="testimonial-text">
+                  “Ada kendala lngsng di respon baik sm adminnya.”
+                </p>
+                <div class="profile">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/45.jpg"
+                    alt="Agus Alok"
+                  />
+                  <h6>Agus Alok</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4 col-sm-6">
+              <div class="testimonial-card">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <p class="testimonial-text">
+                  “Terpercaya bgt top up disini ga pake ribet.”
+                </p>
+                <div class="profile">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/23.jpg"
+                    alt="Dimas Balmon"
+                  />
+                  <h6>Dimas Balmon</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-4 col-sm-6">
+              <div class="testimonial-card">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <p class="testimonial-text">“Kpn lgi beli dm semurah ini.”</p>
+                <div class="profile">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/33.jpg"
+                    alt="Reza Kejepit"
+                  />
+                  <h6>Reza Kejepit</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-md-4 col-sm-6">
+              <div class="testimonial-card">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <p class="testimonial-text">
+                  “Cepet bgt woi topup disini, blm bayar lngsung masuk.”
+                </p>
+                <div class="profile">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/64.jpg"
+                    alt="Anna Angela"
+                  />
+                  <h6>Anna Angela</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-md-4 col-sm-6">
+              <div class="testimonial-card">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <p class="testimonial-text">
+                  “Rekomended bgt buat yg mau top up, mending disini aja.”
+                </p>
+                <div class="profile">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/72.jpg"
+                    alt="Udin Gacor"
+                  />
+                  <h6>Udin Gacor</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-left">
+          <a href="#header" class="footer-brand">TuanMuda</a>
+          <p class="footer-desc">
+            Selamat datang di TuanMuda, platform terbaik untuk layanan top-up
+            game, entertainment dan pulsa terpercaya! Kami hadir untuk membantu
+            para gamer menikmati pengalaman bermain yang lebih seru, cepat, dan
+            tanpa ribet.
+          </p>
+
+          <div class="footer-socials">
+            <a
+              href="https://www.instagram.com/mobilelegendsgame"
+              target="_blank"
+            >
+              <img src="assets/ig.png" alt="Instagram" />
+            </a>
+            <a href="https://www.tiktok.com/@mobilelegendsgame" target="_blank">
+              <img src="assets/tiktok.png" alt="TikTok" />
+            </a>
+            <a
+              href="https://www.youtube.com/@MobileLegends5v5MOBA"
+              target="_blank"
+            >
+              <img src="assets/yt.png" alt="YouTube" />
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hubungi Kami</h4>
+          <ul>
+            <li>
+              <a
+                href="https://wa.me/6281380368831?text=Halo%20Minpap%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20TuanMuda"
+                target="_blank"
+                >Chat Admin</a
+              >
+            </li>
+            <li><a href="mailto:muhsharlan8@gmail.com">Email</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legalitas</h4>
+          <ul>
+            <li><a href="#" id="privacyLink">Kebijakan Privasi</a></li>
+            <li><a href="#" id="termsLink">Syarat & Ketentuan</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom text-center mt-4">
+        <p>© 2025 TuanMuda. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- MODAL: KEBIJAKAN PRIVASI -->
+    <div
+      class="modal fade"
+      id="privacyModal"
+      tabindex="-1"
+      aria-labelledby="privacyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="privacyModalLabel">
+              Kebijakan Privasi
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Kami di TuanMuda menghargai privasi Anda. Informasi pribadi yang
+              Anda berikan saat melakukan transaksi hanya digunakan untuk
+              memproses pesanan, verifikasi, dan meningkatkan layanan kami. Kami
+              tidak akan menjual atau membagikan data Anda kepada pihak ketiga
+              tanpa izin Anda, kecuali diwajibkan oleh hukum.
+            </p>
+            <p>
+              Dengan menggunakan layanan kami, Anda menyetujui pengumpulan dan
+              penggunaan informasi sesuai dengan kebijakan ini.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: SYARAT & KETENTUAN -->
+    <div
+      class="modal fade"
+      id="termsModal"
+      tabindex="-1"
+      aria-labelledby="termsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="termsModalLabel">Syarat & Ketentuan</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Dengan menggunakan layanan TuanMuda, pengguna dianggap telah
+              membaca dan menyetujui seluruh syarat dan ketentuan berikut:
+            </p>
+            <ul>
+              <li>
+                Transaksi yang telah berhasil tidak dapat dibatalkan atau
+                dikembalikan.
+              </li>
+              <li>
+                Pastikan data yang Anda masukkan (seperti ID game atau nomor
+                tujuan) benar sebelum melakukan pembayaran.
+              </li>
+              <li>
+                Kami berhak menolak pesanan yang mencurigakan atau tidak sesuai
+                dengan kebijakan kami.
+              </li>
+              <li>
+                Kami tidak bertanggung jawab atas kesalahan penginputan data
+                oleh pengguna.
+              </li>
+            </ul>
+            <p>
+              TuanMuda berhak mengubah ketentuan ini sewaktu-waktu tanpa
+              pemberitahuan sebelumnya.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const products = {
+        game: [
+          { name: "Mobile Legends", img: "assets/mlbb.jpg" },
+          { name: "Free Fire", img: "assets/freefire.jpg" },
+          { name: "Honor Of Kings", img: "assets/hok.jpg" },
+          { name: "PUBG Mobile", img: "assets/pubg.jpg" },
+        ],
+        entertainment: [
+          { name: "Netflix Gift Code", img: "assets/netflix.png" },
+          { name: "Spotify Premium", img: "assets/spotify.png" },
+          { name: "Vision Plus", img: "assets/vision.png" },
+          { name: "Vidio", img: "assets/vidio.png" },
+        ],
+        pulsa: [
+          { name: "Telkomsel", img: "assets/telkomsel.png" },
+          { name: "XL Axiata", img: "assets/xl.png" },
+          { name: "Indosat Ooredoo", img: "assets/indosat.png" },
+          { name: "Smartfren", img: "assets/smartfren.png" },
+        ],
+      };
+
+      const productList = document.getElementById("product-list");
+      const buttons = document.querySelectorAll(".category-btn");
+      const waNumber = "6281380368831";
+
+      // Highlight button atas → scroll ke products
+      document
+        .querySelector(".highlight .btn")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+          selectCategory("game");
+        });
+
+      document
+        .querySelector(".highlight-bottom .btn")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+          selectCategory("entertainment");
+        });
+
+      function renderProducts(list) {
+        const container = document.querySelector("#products .container");
+        const existingList = document.getElementById("product-list");
+
+        // Pastikan hanya area list yang berubah, bukan seluruh section
+        existingList.innerHTML = `
+    <div class="row g-4 justify-content-center"></div>
+  `;
+
+        const row = existingList.querySelector(".row");
+
+        list.forEach((p) => {
+          const col = document.createElement("div");
+          col.className = "col-6 col-md-3";
+          col.innerHTML = `
+      <a href="https://wa.me/${waNumber}?text=Halo%2C%20saya%20ingin%20top%20up%20${encodeURIComponent(
+            p.name
+          )}" target="_blank" class="text-decoration-none">
+        <div class="product-card h-100 shadow-sm">
+          <div class="img-container">
+            <img src="${p.img}" alt="${p.name}">
+          </div>
+          <div class="card-body text-center">
+            <h6 class="fw-bold text-dark">${p.name}</h6>
+          </div>
+        </div>
+      </a>
+    `;
+          row.appendChild(col);
+        });
+      }
+
+      function selectCategory(category) {
+        buttons.forEach((b) => b.classList.remove("active"));
+        document
+          .querySelector(`[data-category="${category}"]`)
+          .classList.add("active");
+
+        // ubah judul
+        document.querySelector("#products h2").textContent =
+          category.charAt(0).toUpperCase() + category.slice(1);
+
+        // ubah class mode di #products biar CSS-nya aktif
+        const productsSection = document.getElementById("products");
+        productsSection.classList.remove(
+          "game-mode",
+          "entertainment-mode",
+          "pulsa-mode"
+        );
+        productsSection.classList.add(`${category}-mode`);
+
+        // render produk sesuai kategori
+        renderProducts(products[category]);
+
+        productsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          selectCategory(btn.dataset.category);
+          document.getElementById("searchInput").value = ""; // reset search saat ganti tab
+        });
+      });
+
+      // Nomor WhatsApp tujuan
+      const waNumberBanner = "6281380368831";
+
+      // Event untuk tombol di banner "Hubungi Kami"
+      document
+        .querySelector(".get-started-section .btn")
+        .addEventListener("click", () => {
+          const text = encodeURIComponent(
+            "Halo, saya mengalami kendala dalam transaksi di TuanMuda. Mohon bantuannya."
+          );
+          const waLink = `https://wa.me/${waNumberBanner}?text=${text}`;
+          window.open(waLink, "_blank");
+        });
+
+      // Efek hover kecil untuk ikon sosial
+      document.querySelectorAll(".footer-socials a img").forEach((icon) => {
+        icon.addEventListener("mouseenter", () => {
+          icon.style.filter = "brightness(1.2)";
+        });
+        icon.addEventListener("mouseleave", () => {
+          icon.style.filter = "brightness(1)";
+        });
+      });
+
+      document.getElementById("privacyLink").addEventListener("click", (e) => {
+        e.preventDefault();
+        const modal = new bootstrap.Modal(
+          document.getElementById("privacyModal")
+        );
+        modal.show();
+      });
+
+      document.getElementById("termsLink").addEventListener("click", (e) => {
+        e.preventDefault();
+        const modal = new bootstrap.Modal(
+          document.getElementById("termsModal")
+        );
+        modal.show();
+      });
+
+      // render awal
+      renderProducts(products.game);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
