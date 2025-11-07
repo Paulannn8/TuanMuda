@@ -79,6 +79,8 @@
             </form>
             <img
               src="assets/angela kishin densetsu.png"
+              decoding="async"
+              fetchpriority="high"
               alt="Header Image"
               class="hero-img"
             />
@@ -201,9 +203,7 @@
                 karena kami juga menyediakan top up untuk berbagai layanan
                 hiburan populer!
               </p>
-              <a href="" class="btn btn-lg fw-bold"
-                >Berlangganan Sekarang</a
-              >
+              <a href="" class="btn btn-lg fw-bold">Berlangganan Sekarang</a>
             </div>
           </div>
         </section>
@@ -631,6 +631,7 @@
           "entertainment-mode",
           "pulsa-mode"
         );
+        
         productsSection.classList.add(`${category}-mode`);
 
         // render produk sesuai kategori

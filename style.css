@@ -138,6 +138,9 @@ nav .navbar-brand {
 
 .img-about img {
   max-width: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1; /* Tambahan bagus untuk responsif */
 }
 
 .bg {
