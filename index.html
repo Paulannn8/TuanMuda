@@ -595,7 +595,7 @@
 
         list.forEach((p) => {
           const col = document.createElement("div");
-          col.className = "col-6 col-md-3";
+          col.className = "card-container col-6 col-md-4 col-lg-3";
           col.innerHTML = `
       <a href="https://wa.me/${waNumber}?text=Halo%2C%20saya%20ingin%20top%20up%20${encodeURIComponent(
             p.name
@@ -631,7 +631,7 @@
           "entertainment-mode",
           "pulsa-mode"
         );
-        
+
         productsSection.classList.add(`${category}-mode`);
 
         // render produk sesuai kategori

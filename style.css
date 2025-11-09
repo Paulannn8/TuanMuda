@@ -292,7 +292,7 @@ nav .navbar-brand {
 }
 
 .product-card .img-container img {
-  width: 100%;
+  width: 90%;
   height: 160px; /* bisa ubah ke 180px kalau mau sedikit lebih tinggi */
   object-fit: cover;
   border-radius: 12px;
@@ -679,6 +679,7 @@ footer a {
   .bg-highlight {
     padding-left: 0px;
     padding-right: 0px;
+    width: 90%;
   }
 
   .bg-highlight .isi {
@@ -1023,6 +1024,11 @@ footer a {
 
   #product-list {
     gap: 1rem;
+  }
+
+  #products .card-container {
+    display: flex;
+    justify-content: center;
   }
 
   .product-card {
