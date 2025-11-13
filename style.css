@@ -424,14 +424,63 @@ nav .navbar-brand {
   align-items: stretch;
 }
 
+/* --- Arah gerak --- */
+.testi-atas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  animation: scroll-right 15s infinite linear;
+  padding-right: 2em;
+}
+
+.testi-bawah {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  animation: scroll-left 15s infinite linear;
+  padding-right: 2em;
+}
+
+.carousel-atas {
+  display: flex;
+  overflow-x: auto;
+  gap: 1em;
+}
+
+.carousel-bawah {
+  display: flex;
+  overflow-x: auto;
+  gap: 1em;
+}
+
+@keyframes scroll-left {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    translate: -100%;
+  }
+  to {
+    translate: 0;
+  }
+}
+
 /* card utama */
 .testimonial-card {
   position: relative;
+  flex: 0 0 18em;
   cursor: pointer;
   margin: 10px auto;
-  width: 100%;
-  max-width: 320px;
-  min-height: 180px;
+  width: 18em;
+  height: 180px;
   padding: 20px 18px 55px;
   border-radius: 15px;
   background: #fff;
@@ -801,8 +850,9 @@ footer a {
 
   .testimonial-section {
     width: 90%;
-    padding: 20px 10px;
+    padding: 20px 30px;
     margin: 20px auto;
+    padding-bottom: 30px;
   }
 
   .testimonial-section h2 {
@@ -1091,6 +1141,24 @@ footer a {
     width: 90%;
     padding: 20px 10px;
     margin: 20px auto;
+  }
+
+  .testi-atas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: scroll-right 15s infinite linear;
+    padding-right: 0.1em;
+  }
+
+  .testi-bawah {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: scroll-left 15s infinite linear;
+    padding-right: 0.1em;
   }
 
   .testimonial-section h2 {
