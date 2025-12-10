@@ -170,7 +170,10 @@
                 Misi Top Up? Packet Bundle? Serahkan pada kami! Nikmati Top Up
                 game murah, cepat dan terpercaya hanya di TuanMuda.
               </p>
-              <a href="#" class="btn btn-warning btn-lg fw-bold"
+              <a
+                href="#game"
+                class="btn btn-warning btn-lg fw-bold"
+                onclick="selectCategory('game')"
                 >Top Up Sekarang</a
               >
             </div>
@@ -203,7 +206,12 @@
                 karena kami juga menyediakan top up untuk berbagai layanan
                 hiburan populer!
               </p>
-              <a href="" class="btn btn-lg fw-bold">Berlangganan Sekarang</a>
+              <a
+                href="#entertainment"
+                class="btn btn-lg fw-bold"
+                onclick="selectCategory('entertainment')"
+                >Berlangganan Sekarang</a
+              >
             </div>
           </div>
         </section>
@@ -214,10 +222,14 @@
         <div class="container text-center">
           <h2 class="fw-bold mb-4">Game</h2>
           <div class="category-container mb-4">
-            <button class="category-btn active" data-category="game">
+            <button id="game" class="category-btn active" data-category="game">
               Game
             </button>
-            <button class="category-btn" data-category="entertainment">
+            <button
+              id="entertainment"
+              class="category-btn"
+              data-category="entertainment"
+            >
               Entertainment
             </button>
             <button class="category-btn" data-category="pulsa">Pulsa</button>
@@ -225,6 +237,8 @@
           <div id="product-list"></div>
         </div>
       </section>
+
+      <section id="checkout" class="d-none"></section>
 
       <!-- banner -->
       <div class="banner my-5">
@@ -254,293 +268,13 @@
         <h2 class="text-center fw-bold mt-4">Testimonial</h2>
         <div class="container">
           <div class="row text-start g-4">
-
             <div class="carousel-atas">
-              <div class="testi-atas">
-                <!-- Card 1 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Murah bgt top up disini, gacorrrr.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/women/68.jpg"
-                        alt="amel icikiwir"
-                      />
-                      <h6>Amel Icikiwir</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Ada kendala lngsng di respon baik sm adminnya.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/men/45.jpg"
-                        alt="Agus Alok"
-                      />
-                      <h6>Agus Alok</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Terpercaya bgt top up disini ga pake ribet.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/women/23.jpg"
-                        alt="Dimas Balmon"
-                      />
-                      <h6>Dimas Balmon</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="aria-hidden testi-atas">
-                <!-- Card 1 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Murah bgt top up disini, gacorrrr.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/women/68.jpg"
-                        alt="amel icikiwir"
-                      />
-                      <h6>Amel Icikiwir</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Ada kendala lngsng di respon baik sm adminnya.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/men/45.jpg"
-                        alt="Agus Alok"
-                      />
-                      <h6>Agus Alok</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Terpercaya bgt top up disini ga pake ribet.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/women/23.jpg"
-                        alt="Dimas Balmon"
-                      />
-                      <h6>Dimas Balmon</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div class="testi-atas" id="testi-atas-1"></div>
+              <div class="aria-hidden testi-atas" id="testi-atas-2"></div>
             </div>
-
             <div class="carousel-bawah">
-              <div class="testi-bawah">
-                <!-- Card 4 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Kpn lgi beli dm semurah ini.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/men/33.jpg"
-                        alt="Reza Kejepit"
-                      />
-                      <h6>Reza Kejepit</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Cepet bgt woi topup disini, blm bayar lngsung masuk.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/women/64.jpg"
-                        alt="Anna Angela"
-                      />
-                      <h6>Anna Angela</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Rekomended bgt buat yg mau top up, mending disini aja.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/men/72.jpg"
-                        alt="Udin Gacor"
-                      />
-                      <h6>Udin Gacor</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="aria-hidden testi-bawah">
-                <!-- Card 4 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-half"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Kpn lgi beli dm semurah ini.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/men/33.jpg"
-                        alt="Reza Kejepit"
-                      />
-                      <h6>Reza Kejepit</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Cepet bgt woi topup disini, blm bayar lngsung masuk.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/women/64.jpg"
-                        alt="Anna Angela"
-                      />
-                      <h6>Anna Angela</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="col-md-4 col-sm-6">
-                  <div class="testimonial-card">
-                    <div class="stars">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star"></i>
-                    </div>
-                    <p class="testimonial-text">
-                      “Rekomended bgt buat yg mau top up, mending disini aja.”
-                    </p>
-                    <div class="profile">
-                      <img
-                        src="https://randomuser.me/api/portraits/men/72.jpg"
-                        alt="Udin Gacor"
-                      />
-                      <h6>Udin Gacor</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div class="testi-bawah" id="testi-bawah-1"></div>
+              <div class="aria-hidden testi-bawah" id="testi-bawah-2"></div>
             </div>
           </div>
         </div>
@@ -695,77 +429,756 @@
       </div>
     </div>
     <script>
-      const products = {
-        game: [
-          { name: "Mobile Legends", img: "assets/mlbb.jpg" },
-          { name: "Free Fire", img: "assets/freefire.jpg" },
-          { name: "Honor Of Kings", img: "assets/hok.jpg" },
-          { name: "PUBG Mobile", img: "assets/pubg.jpg" },
-        ],
-        entertainment: [
-          { name: "Netflix Gift Code", img: "assets/netflix.png" },
-          { name: "Spotify Premium", img: "assets/spotify.png" },
-          { name: "Vision Plus", img: "assets/vision.png" },
-          { name: "Vidio", img: "assets/vidio.png" },
-        ],
-        pulsa: [
-          { name: "Telkomsel", img: "assets/telkomsel.png" },
-          { name: "XL Axiata", img: "assets/xl.png" },
-          { name: "Indosat Ooredoo", img: "assets/indosat.png" },
-          { name: "Smartfren", img: "assets/smartfren.png" },
-        ],
+      // Deklarasi variabel kosong dulu (akan diisi dari database)
+      let products = { game: [], entertainment: [], pulsa: [] };
+      let checkoutData = {};
+
+      // Load products dari database
+      async function loadProductsFromDB() {
+        try {
+          const response = await fetch("backend/get_products.php");
+          const result = await response.json();
+
+          if (result.success) {
+            // Reset products
+            products = { game: [], entertainment: [], pulsa: [] };
+
+            // Group by category
+            result.data.forEach((p) => {
+              products[p.category].push({
+                name: p.name,
+                img: p.img,
+                id: p.id,
+              });
+            });
+
+            // Render products game (default)
+            renderProducts(products.game);
+          }
+        } catch (error) {
+          console.error("Error loading products:", error);
+        }
+      }
+
+      // Load detail produk saat diklik
+      async function loadProductDetail(productName) {
+        try {
+          const response = await fetch(
+            `backend/get_product_detail.php?name=${encodeURIComponent(
+              productName
+            )}`
+          );
+          const result = await response.json();
+
+          if (result.success) {
+            const p = result.data;
+
+            // Build checkoutData dari database
+            checkoutData[productName] = {
+              img: p.img,
+              title: p.title,
+              tag: p.tag,
+              cara: p.cara,
+              diamond: p.item_label,
+              paket: p.package_label,
+              steps: [
+                `Pilih Tipe ${p.cara} yang kamu inginkan`,
+                p.input_label,
+                "Pilih metode pembayaran",
+                "Selesaikan pembayaran",
+                `Item akan otomatis masuk ke akun ${productName} kamu`,
+              ],
+              diamonds: p.diamonds.map((d) => ({
+                img: d.img,
+                name: d.name,
+                bonus: d.bonus,
+                price: `Rp. ${parseInt(d.price).toLocaleString("id-ID")}`,
+              })),
+              packages: p.packages.map((pkg) => ({
+                img: pkg.img,
+                name: pkg.name,
+                price: `Rp. ${parseInt(pkg.price).toLocaleString("id-ID")}`,
+              })),
+              inputType: p.input_type,
+              inputLabel: p.input_label,
+              inputPlaceholder:
+                p.input_type === "game-with-zone"
+                  ? {
+                      userId: p.input_placeholder_userid,
+                      zoneId: p.input_placeholder_zoneid,
+                    }
+                  : p.input_placeholder_userid,
+              inputHelp: p.input_help,
+            };
+
+            // Panggil showCheckout dengan data dari database
+            showCheckout(productName);
+          }
+        } catch (error) {
+          console.error("Error loading product detail:", error);
+          alert("Gagal memuat detail produk");
+        }
+      }
+
+      const paymentMethods = {
+        ewallet: {
+          title: "E-Wallet dan QRIS",
+          fee: 1000,
+          methods: [
+            { name: "GoPay", img: "assets/gopay.png", id: "gopay" },
+            { name: "DANA", img: "assets/dana.png", id: "dana" },
+            { name: "OVO", img: "assets/ovo.png", id: "ovo" },
+            { name: "QRIS", img: "assets/qris.png", id: "qris" },
+          ],
+        },
+
+        virtual_account: {
+          title: "Virtual Account",
+          fee: 2000,
+          methods: [
+            {
+              name: "BCA",
+              img: "assets/bca.png",
+              id: "bca_va",
+            },
+            {
+              name: "BRI",
+              img: "assets/bri.png",
+              id: "bri_va",
+            },
+            {
+              name: "BNI",
+              img: "assets/bni.png",
+              id: "bni_va",
+            },
+            {
+              name: "Mandiri",
+              img: "assets/mandiri.png",
+              id: "mandiri_va",
+            },
+          ],
+        },
+
+        gerai: {
+          title: "Gerai",
+          fee: 3000,
+          methods: [
+            { name: "Alfamart", img: "assets/alfamart.png", id: "alfamart" },
+            { name: "Indomaret", img: "assets/indomaret.png", id: "indomaret" },
+          ],
+        },
       };
 
-      const productList = document.getElementById("product-list");
-      const buttons = document.querySelectorAll(".category-btn");
-      const waNumber = "6281380368831";
+      let selectedItemData = {
+        productName: "",
+        itemName: "",
+        itemPrice: 0,
+      };
 
-      // Highlight button atas → scroll ke products
-      document
-        .querySelector(".highlight .btn")
-        .addEventListener("click", (e) => {
-          e.preventDefault();
-          selectCategory("game");
-        });
+      let selectedPaymentMethod = {
+        id: "",
+        name: "",
+        totalPrice: 0,
+      };
 
-      document
-        .querySelector(".highlight-bottom .btn")
-        .addEventListener("click", (e) => {
-          e.preventDefault();
-          selectCategory("entertainment");
-        });
+      // TAMBAHKAN 3 FUNGSI INI
+      function updateBottomNavbar() {
+        let bottomNav = document.getElementById("bottom-navbar");
 
-      function renderProducts(list) {
-        const container = document.querySelector("#products .container");
-        const existingList = document.getElementById("product-list");
+        if (!selectedItemData.itemName) {
+          if (bottomNav) {
+            bottomNav.classList.add("d-none");
+          }
+          return;
+        }
 
-        // Pastikan hanya area list yang berubah, bukan seluruh section
-        existingList.innerHTML = `
-    <div class="row g-4 justify-content-center"></div>
+        if (!bottomNav) {
+          bottomNav = document.createElement("div");
+          bottomNav.id = "bottom-navbar";
+          bottomNav.className = "bottom-navbar";
+          document.body.appendChild(bottomNav);
+        }
+
+        const isInputValid = validateUserInput();
+        const isPaymentSelected = selectedPaymentMethod.id !== "";
+        const canCheckout = isInputValid && isPaymentSelected;
+
+        let errorMessage = "";
+        if (!isInputValid) {
+          const inputType =
+            checkoutData[selectedItemData.productName].inputType;
+          if (inputType === "game-with-zone" || inputType === "game") {
+            errorMessage = "Isi User ID terlebih dahulu";
+          } else if (inputType === "email") {
+            errorMessage = "Isi Email terlebih dahulu";
+          } else if (inputType === "phone") {
+            errorMessage = "Isi No HP terlebih dahulu";
+          }
+        } else if (!isPaymentSelected) {
+          errorMessage = "Pilih metode pembayaran";
+        }
+
+        const totalPrice =
+          selectedPaymentMethod.totalPrice || selectedItemData.itemPrice;
+
+        bottomNav.innerHTML = `
+    <div class="bottom-navbar-content">
+      <div class="bottom-navbar-info">
+        <div class="navbar-item-name">${selectedItemData.itemName}</div>
+        <div class="navbar-total-price">Total: Rp${totalPrice.toLocaleString(
+          "id-ID"
+        )}</div>
+      </div>
+      <button 
+        class="btn-checkout ${!canCheckout ? "disabled" : ""}" 
+        ${!canCheckout ? "disabled" : ""}
+        onclick="processCheckout()"
+      >
+        ${canCheckout ? "Beli Sekarang" : errorMessage}
+      </button>
+    </div>
   `;
+
+        bottomNav.classList.remove("d-none");
+      }
+
+      function validateUserInput() {
+        const data = checkoutData[selectedItemData.productName];
+
+        if (data.inputType === "game-with-zone") {
+          const userId = document.getElementById("userId");
+          const zoneId = document.getElementById("zoneId");
+          return (
+            userId &&
+            zoneId &&
+            userId.value.trim() !== "" &&
+            zoneId.value.trim() !== ""
+          );
+        } else if (data.inputType === "game") {
+          const userId = document.getElementById("userId");
+          return userId && userId.value.trim() !== "";
+        } else if (data.inputType === "email") {
+          const email = document.getElementById("userEmail");
+          return email && email.value.trim() !== "" && email.validity.valid;
+        } else if (data.inputType === "phone") {
+          const phone = document.getElementById("userPhone");
+          return phone && phone.value.trim() !== "" && phone.value.length >= 10;
+        }
+
+        return false;
+      }
+
+      async function processCheckout() {
+        const data = checkoutData[selectedItemData.productName];
+        let userInput = {};
+
+        if (data.inputType === "game-with-zone") {
+          userInput.userId = document.getElementById("userId").value;
+          userInput.zoneId = document.getElementById("zoneId").value;
+        } else if (data.inputType === "game") {
+          userInput.userId = document.getElementById("userId").value;
+        } else if (data.inputType === "email") {
+          userInput.email = document.getElementById("userEmail").value;
+        } else if (data.inputType === "phone") {
+          userInput.phone = document.getElementById("userPhone").value;
+        }
+
+        // Data yang akan dikirim ke backend
+        const transactionData = {
+          product_name: selectedItemData.productName,
+          item_name: selectedItemData.itemName,
+          item_price: selectedItemData.itemPrice,
+          payment_method: selectedPaymentMethod.name,
+          payment_category: selectedPaymentMethod.category,
+          total_price: selectedPaymentMethod.totalPrice,
+          user_input: userInput,
+        };
+
+        console.log("=== MENGIRIM DATA KE BACKEND ===");
+        console.log(transactionData);
+
+        // Tampilkan loading di tombol
+        const btnCheckout = document.querySelector(".btn-checkout");
+        const originalText = btnCheckout.textContent;
+        btnCheckout.disabled = true;
+        btnCheckout.innerHTML =
+          '<span class="spinner-border spinner-border-sm me-2"></span>Processing...';
+
+        try {
+          // Kirim ke backend PHP
+          const response = await fetch("backend/create_transaction.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(transactionData),
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            console.log("✅ Response dari backend:", result);
+
+            // BUKA TAB BARU untuk status page
+            window.open(`status.html?order_id=${result.order_id}`, "_blank");
+
+            // Reset form dan kembali ke products
+            setTimeout(() => {
+              // Reload transaksi jika section visible
+              if (document.getElementById("transactions-tbody")) {
+                loadAllTransactions();
+              }
+            }, 500);
+          } else {
+            // Reset button
+            btnCheckout.disabled = false;
+            btnCheckout.textContent = originalText;
+
+            alert(`❌ Transaksi Gagal!\n\n${result.message}`);
+            console.error("❌ Error:", result);
+          }
+        } catch (error) {
+          // Reset button
+          btnCheckout.disabled = false;
+          btnCheckout.textContent = originalText;
+
+          alert(
+            `❌ Terjadi kesalahan!\n\n` +
+              `Tidak dapat terhubung ke server.\n` +
+              `Pastikan XAMPP sudah running.\n\n` +
+              `Error: ${error.message}`
+          );
+          console.error("❌ Fetch error:", error);
+        }
+      }
+
+      /* ================== RENDER PRODUK ================== */
+      function renderProducts(list) {
+        const existingList = document.getElementById("product-list");
+        existingList.innerHTML = `<div class="row g-4 justify-content-center"></div>`;
 
         const row = existingList.querySelector(".row");
 
         list.forEach((p) => {
           const col = document.createElement("div");
           col.className = "card-container col-6 col-md-4 col-lg-3";
+
           col.innerHTML = `
-      <a href="https://wa.me/${waNumber}?text=Halo%2C%20saya%20ingin%20top%20up%20${encodeURIComponent(
-            p.name
-          )}" target="_blank" class="text-decoration-none">
-        <div class="product-card h-100 shadow-sm">
-          <div class="img-container">
-            <img src="${p.img}" alt="${p.name}">
-          </div>
-          <div class="card-body text-center">
-            <h6 class="fw-bold text-dark">${p.name}</h6>
-          </div>
-        </div>
-      </a>
-    `;
+            <div class="product-card h-100 shadow-sm" onclick="loadProductDetail('${p.name}')">
+              <div class="img-container">
+                <img src="${p.img}" alt="${p.name}">
+              </div>
+              <div class="card-body text-center">
+                <h6 class="fw-bold text-dark">${p.name}</h6>
+              </div>
+            </div>
+          `;
+
           row.appendChild(col);
         });
       }
+
+      function renderInputForm(data) {
+        if (data.inputType === "game-with-zone") {
+          return `
+      <div class="input-container mb-4">
+        <div class="input-header">
+          <div class="input-title">
+            <h3>${data.inputLabel}</h3>
+          </div>
+        </div>
+        
+        <div class="input-group-custom">
+          <div class="row g-2">
+            <div class="col-8">
+              <label class="input-label">User ID</label>
+              <input 
+                type="text" 
+                class="form-control custom-input" 
+                id="userId" 
+                placeholder="${data.inputPlaceholder.userId}"
+                required
+              >
+            </div>
+            <div class="col-4">
+              <label class="input-label">Zone ID</label>
+              <input 
+                type="text" 
+                class="form-control custom-input" 
+                id="zoneId" 
+                placeholder="${data.inputPlaceholder.zoneId}"
+                required
+              >
+            </div>
+          </div>
+          ${
+            data.inputHelp
+              ? `<small class="text-muted mt-1 d-block">${data.inputHelp}</small>`
+              : ""
+          }
+        </div>
+      </div>
+    `;
+        } else if (data.inputType === "game") {
+          return `
+      <div class="input-container mb-4">
+        <div class="input-header">
+          <div class="input-title">
+            <h3>${data.inputLabel}</h3>
+          </div>
+        </div>
+        
+        <div class="input-group-custom">
+          <label class="input-label">User ID</label>
+          <input 
+            type="text" 
+            class="form-control custom-input" 
+            id="userId" 
+            placeholder="${data.inputPlaceholder}"
+            required
+          >
+          ${
+            data.inputHelp
+              ? `<small class="text-muted mt-1 d-block">${data.inputHelp}</small>`
+              : ""
+          }
+        </div>
+      </div>
+    `;
+        } else if (data.inputType === "email") {
+          return `
+      <div class="input-container mb-4">
+        <div class="input-header">
+          <div class="input-title">
+            <h3>${data.inputLabel}</h3>
+          </div>
+        </div>
+        
+        <div class="input-group-custom">
+          <label class="input-label">Email</label>
+          <input 
+            type="email" 
+            class="form-control custom-input" 
+            id="userEmail" 
+            placeholder="${data.inputPlaceholder}"
+            required
+          >
+          ${
+            data.inputHelp
+              ? `<small class="text-muted mt-1 d-block">${data.inputHelp}</small>`
+              : ""
+          }
+        </div>
+      </div>
+    `;
+        } else if (data.inputType === "phone") {
+          return `
+      <div class="input-container mb-4">
+        <div class="input-header">
+          <div class="input-title">
+            <h3>${data.inputLabel}</h3>
+          </div>
+        </div>
+        
+        <div class="input-group-custom">
+          <label class="input-label">Nomor HP</label>
+          <input 
+            type="tel" 
+            class="form-control custom-input" 
+            id="userPhone" 
+            placeholder="${data.inputPlaceholder}"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            required
+          >
+          ${
+            data.inputHelp
+              ? `<small class="text-muted mt-1 d-block">${data.inputHelp}</small>`
+              : ""
+          }
+        </div>
+      </div>
+    `;
+        }
+      }
+
+      /* ================== TAMPIL CHECKOUT ================== */
+      function showCheckout(gameName) {
+        const data = checkoutData[gameName];
+        const checkout = document.getElementById("checkout");
+
+        // Reset selected item
+        selectedItemData.productName = gameName;
+        selectedItemData.itemName = "";
+        selectedItemData.itemPrice = 0;
+
+        selectedPaymentMethod = {
+          id: "",
+          name: "",
+          totalPrice: 0,
+        };
+
+        const bottomNav = document.getElementById("bottom-navbar");
+        if (bottomNav) {
+          bottomNav.classList.add("d-none");
+        }
+
+        checkout.classList.remove("d-none");
+
+        const oldInput = document.getElementById("input-form-section");
+        if (oldInput) oldInput.remove();
+
+        const oldPayment = document.getElementById("payment-methods");
+        if (oldPayment) oldPayment.remove();
+
+        checkout.innerHTML = `
+          <div class="checkout-card mb-4">
+            <div class="checkout-header">
+              <div class="checkout-img">
+                <img src="${data.img}" class="game-icon">
+              </div>
+              <div class="judul-checkout">
+                <h3 class="tag">${data.tag}</h3>
+                <h2>${data.title}</h2>
+              </div>
+            </div>
+
+            <div class="checkout-steps">
+              <h3>Cara ${data.cara} ${gameName}</h3>
+              <ol>
+                ${data.steps.map((s) => `<li>${s}</li>`).join("")}
+              </ol>
+              <div class="product-badges">
+                <span class="badge">Aman terpercaya</span>
+                <span class="badge">Garansi 100%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nominal-container" id="nominal">
+            <div class="p-2 bg-white pt-3">
+              <h2 class="mt-3 text-center">${data.diamond}</h2>
+              <div class="row justify-content-center row-cols-2 row-cols-md-4 g-3 mb-4 mt-3">
+              ${data.diamonds
+                .map(
+                  (item, index) => `
+                <div class="col d-flex justify-content-center">
+                  <button class="border-0 bg-white diamond-btn" data-item-name="${
+                    item.name
+                  }" data-item-price="${item.price}" data-item-index="${index}">
+                    <div class="diamond-card">
+                      <div class="diamond-body">
+                        ${
+                          item.img
+                            ? `
+                          <div class="container-produk-img">
+                            <img src="${item.img}" class="produk-img">
+                          </div>
+                        `
+                            : ""
+                        }
+                        <h3>${item.name}</h3>
+                        ${item.bonus ? `<p>${item.bonus}</p>` : ""}
+                      </div>
+                      <div class="diamond-footer">${item.price}</div>
+                    </div>
+                  </button>
+                </div>
+              `
+                )
+                .join("")}
+            </div>
+            
+            ${
+              data.packages && data.packages.length > 0
+                ? `
+              <div class="p-2 bg-white pt-3">
+                <h2 class="mt-3 text-center">${data.paket || ""}</h2>
+                <div class="row justify-content-center row-cols-2 row-cols-md-4 g-3 mb-4 mt-3">
+                  ${data.packages
+                    .map(
+                      (item, index) => `
+                    <div class="col d-flex justify-content-center">
+                      <button class="border-0 bg-white diamond-btn" data-item-name="${item.name}" data-item-price="${item.price}" data-item-index="pkg-${index}">
+                        <div class="diamond-card">
+                          <div class="diamond-body">
+                            <div class="container-produk-img">
+                              <img src="${item.img}" class="produk-img" style="margin-bottom:4px">
+                            </div>
+                            <h3>${item.name}</h3>
+                          </div>
+                          <div class="diamond-footer">${item.price}</div>
+                        </div>
+                      </button>
+                    </div>
+                  `
+                    )
+                    .join("")}
+                </div>
+              </div>
+            `
+                : ""
+            }
+            </div>
+          </div>
+        `;
+
+        // Validasi nomor HP
+        const phoneInput = document.getElementById("userPhone");
+        if (phoneInput) {
+          phoneInput.addEventListener("input", function (e) {
+            this.value = this.value.replace(/[^0-9]/g, "");
+          });
+        }
+
+        setTimeout(() => {
+          document.querySelectorAll(".diamond-btn").forEach((btn) => {
+            btn.addEventListener("click", function () {
+              document.querySelectorAll(".diamond-btn").forEach((b) => {
+                b.querySelector(".diamond-card").classList.remove("selected");
+              });
+
+              this.querySelector(".diamond-card").classList.add("selected");
+
+              const itemName = this.dataset.itemName;
+              const priceText = this.dataset.itemPrice;
+              const price = parseInt(priceText.replace(/\D/g, ""));
+
+              selectedItemData.itemName = itemName;
+              selectedItemData.itemPrice = price;
+
+              showInputForm(data);
+              renderPaymentMethods();
+              updateBottomNavbar(); // TAMBAHKAN BARIS INI
+            });
+          });
+        }, 100);
+
+        // Scroll ke header
+        setTimeout(() => {
+          const header = document.querySelector(".checkout-header");
+          header.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+
+      function showInputForm(data) {
+        let inputSection = document.getElementById("input-form-section");
+
+        if (!inputSection) {
+          inputSection = document.createElement("section");
+          inputSection.id = "input-form-section";
+          document.getElementById("nominal").after(inputSection);
+        }
+
+        inputSection.innerHTML = renderInputForm(data);
+
+        setTimeout(() => {
+          const inputs = inputSection.querySelectorAll("input");
+          inputs.forEach((input) => {
+            input.addEventListener("input", updateBottomNavbar);
+          });
+        }, 100);
+
+        const phoneInput = document.getElementById("userPhone");
+        if (phoneInput) {
+          phoneInput.addEventListener("input", function (e) {
+            this.value = this.value.replace(/[^0-9]/g, "");
+          });
+        }
+
+        setTimeout(() => {
+          inputSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+
+      function renderPaymentMethods() {
+        // Cek apakah section payment-methods sudah ada
+        let paymentSection = document.getElementById("payment-methods");
+
+        if (!paymentSection) {
+          // Buat section baru jika belum ada
+          paymentSection = document.createElement("section");
+          paymentSection.id = "payment-methods";
+          document.getElementById("checkout").after(paymentSection);
+        }
+
+        paymentSection.classList.remove("d-none");
+
+        let paymentHTML = `
+    <div class="payment-card mb-4">
+      <div class="payment-header">
+        <h3>Pilih Metode Pembayaran</h3>
+      </div>
+  `;
+
+        // Loop through each payment category
+        Object.keys(paymentMethods).forEach((category) => {
+          const categoryData = paymentMethods[category];
+          const totalPrice = selectedItemData.itemPrice + categoryData.fee;
+
+          paymentHTML += `
+      <div class="payment-category mb-4">
+        <h4 class="category-title">${categoryData.title}</h4>
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+    `;
+
+          // Loop through methods in category
+          categoryData.methods.forEach((method) => {
+            paymentHTML += `
+        <div class="col">
+          <div class="payment-method-item" onclick="selectPaymentMethod('${
+            method.id
+          }', ${totalPrice}, '${method.name}', '${category}')">
+            <div class="payment-method-content">
+              <div class="payment-method-info">
+                <img src="${method.img}" alt="${
+              method.name
+            }" class="payment-logo">
+                <span class="payment-name">${method.name}</span>
+              </div>
+              <div class="payment-price">Rp${totalPrice.toLocaleString(
+                "id-ID"
+              )}</div>
+            </div>
+          </div>
+        </div>
+      `;
+          });
+
+          paymentHTML += `
+        </div>
+      </div>
+    `;
+        });
+
+        paymentHTML += `</div>`;
+
+        paymentSection.innerHTML = paymentHTML;
+
+        // Scroll to payment section
+        setTimeout(() => {
+          paymentSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+
+      function selectPaymentMethod(methodId, totalPrice, methodName, category) {
+        document.querySelectorAll(".payment-method-item").forEach((el) => {
+          el.classList.remove("selected");
+        });
+        event.currentTarget.classList.add("selected");
+
+        selectedPaymentMethod = {
+          id: methodId,
+          name: methodName,
+          category: category,
+          totalPrice: totalPrice,
+        };
+
+        updateBottomNavbar();
+      }
+
+      /* ================== PILIH KATEGORI ================== */
+      const buttons = document.querySelectorAll(".category-btn");
 
       function selectCategory(category) {
         buttons.forEach((b) => b.classList.remove("active"));
@@ -773,30 +1186,50 @@
           .querySelector(`[data-category="${category}"]`)
           .classList.add("active");
 
-        // ubah judul
         document.querySelector("#products h2").textContent =
           category.charAt(0).toUpperCase() + category.slice(1);
 
-        // ubah class mode di #products biar CSS-nya aktif
-        const productsSection = document.getElementById("products");
-        productsSection.classList.remove(
-          "game-mode",
-          "entertainment-mode",
-          "pulsa-mode"
-        );
-
-        productsSection.classList.add(`${category}-mode`);
-
-        // render produk sesuai kategori
         renderProducts(products[category]);
 
-        productsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        // Hide checkout section
+        document.getElementById("checkout").classList.add("d-none");
+
+        // Remove input form section if exists
+        const inputSection = document.getElementById("input-form-section");
+        if (inputSection) inputSection.remove();
+
+        // Remove payment methods section if exists
+        const paymentSection = document.getElementById("payment-methods");
+        if (paymentSection) paymentSection.remove();
+
+        // Hide bottom navbar
+        const bottomNav = document.getElementById("bottom-navbar");
+        if (bottomNav) bottomNav.classList.add("d-none");
+
+        // Reset selected data
+        selectedItemData = {
+          productName: "",
+          itemName: "",
+          itemPrice: 0,
+        };
+
+        selectedPaymentMethod = {
+          id: "",
+          name: "",
+          totalPrice: 0,
+        };
+
+        // Optional: Reset checkoutData if needed (but keep it for performance)
+        // checkoutData = {};
+
+        document
+          .getElementById("products")
+          .scrollIntoView({ behavior: "smooth" });
       }
 
       buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
           selectCategory(btn.dataset.category);
-          document.getElementById("searchInput").value = ""; // reset search saat ganti tab
         });
       });
 
@@ -840,8 +1273,86 @@
         modal.show();
       });
 
+      // Load testimonials dari database
+      async function loadTestimonials() {
+        try {
+          // TIDAK ada parameter show_all, jadi hanya ambil yang aktif
+          const response = await fetch("backend/get_testimonials.php");
+          const result = await response.json();
+
+          if (result.success && result.data.length > 0) {
+            const testimonials = result.data;
+
+            console.log(`Total testimonial aktif: ${testimonials.length}`); // DEBUG
+
+            // Split menjadi 2 bagian untuk carousel atas dan bawah
+            const half = Math.ceil(testimonials.length / 2);
+            const topTestimonials = testimonials.slice(0, half);
+            const bottomTestimonials = testimonials.slice(half);
+
+            // Render testimonials atas (2 kali untuk infinite scroll)
+            renderTestimonials(topTestimonials, "testi-atas-1");
+            renderTestimonials(topTestimonials, "testi-atas-2");
+
+            // Render testimonials bawah (2 kali untuk infinite scroll)
+            renderTestimonials(bottomTestimonials, "testi-bawah-1");
+            renderTestimonials(bottomTestimonials, "testi-bawah-2");
+          } else {
+            console.log("Tidak ada testimonial aktif"); // DEBUG
+          }
+        } catch (error) {
+          console.error("Error loading testimonials:", error);
+        }
+      }
+
+      function renderTestimonials(testimonials, containerId) {
+        const container = document.getElementById(containerId);
+
+        container.innerHTML = testimonials
+          .map((t) => {
+            const fullStars = Math.floor(t.rating);
+            const hasHalfStar = t.rating % 1 !== 0;
+
+            let starsHTML = "";
+            for (let i = 0; i < fullStars; i++) {
+              starsHTML += '<i class="bi bi-star-fill"></i>';
+            }
+            if (hasHalfStar) {
+              starsHTML += '<i class="bi bi-star-half"></i>';
+            }
+            for (let i = Math.ceil(t.rating); i < 5; i++) {
+              starsHTML += '<i class="bi bi-star"></i>';
+            }
+
+            return `
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial-card">
+                        <div class="stars">${starsHTML}</div>
+                        <p class="testimonial-text">"${t.text}"</p>
+                        <div class="profile">
+                            <img src="https://randomuser.me/api/portraits/${
+                              t.gender === "male" ? "men" : "women"
+                            }/${t.avatar_seed}.jpg" 
+                                alt="${t.name}">
+                            <h6>${t.name}</h6>
+                        </div>
+                    </div>
+                </div>
+            `;
+          })
+          .join("");
+      }
+
+      // Load testimonials saat halaman dimuat
+      document.addEventListener("DOMContentLoaded", () => {
+        loadProductsFromDB();
+        loadTestimonials(); // Tambahkan ini
+      });
+
       // render awal
-      renderProducts(products.game);
+      document.addEventListener("DOMContentLoaded", () => {
+        loadProductsFromDB();
+      });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

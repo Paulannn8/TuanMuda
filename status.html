@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Status Transaksi - TuanMuda</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .status-section {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #e8dff9, #fde2e4, #fff1e6);
+        min-height: 100vh;
+        padding: 2rem 0;
+        margin: 0;
+      }
+      .status-main-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .status-card {
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border: none;
+      }
+      .status-card-header {
+        background: white;
+        border-radius: 15px 15px 0 0 !important;
+        padding: 2rem;
+        text-align: center;
+        border-bottom: 2px solid #f0f0f0;
+      }
+      .status-card-header h1 {
+        margin: 0;
+        font-weight: 700;
+        color: #764ba2;
+      }
+      .status-card-body {
+        padding: 2rem;
+        background: #f8f9fa;
+      }
+      .result-card {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 1.5rem;
+      }
+      .status-badge {
+        font-size: 1.1rem;
+        padding: 0.5rem 1.5rem;
+        border-radius: 20px;
+        font-weight: 600;
+        display: inline-block;
+      }
+      .status-pending {
+        background: #ffc107;
+        color: #000;
+      }
+      .status-success {
+        background: #28a745;
+        color: #fff;
+      }
+      .status-failed {
+        background: #dc3545;
+        color: #fff;
+      }
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #dee2e6;
+      }
+      .info-row:last-child {
+        border-bottom: none;
+      }
+      .info-label {
+        font-weight: 600;
+        color: #666;
+      }
+      .info-value {
+        color: #333;
+        text-align: right;
+      }
+      .btn-cancel {
+        background: #dc3545;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 10px;
+        font-weight: 600;
+        width: 100%;
+        margin-top: 1rem;
+        transition: all 0.3s;
+      }
+      .btn-cancel:hover {
+        background: #c82333;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+      }
+      .btn-home {
+        background: #764ba2;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 10px;
+        font-weight: 600;
+        width: 100%;
+        margin-top: 1rem;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+      }
+      .btn-home:hover {
+        background: #5a3880;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+      }
+      .alert {
+        border-radius: 10px;
+        border: none;
+      }
+      .loading-container {
+        text-align: center;
+        padding: 3rem;
+      }
+      .loading-container.hide {
+        display: none;
+      }
+      .content-container {
+        display: none;
+      }
+      .content-container.show {
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .success-icon {
+        font-size: 4rem;
+        color: #28a745;
+        animation: scaleIn 0.5s ease;
+      }
+      @keyframes scaleIn {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="status-section">
+      <div class="container status-main-container">
+        <!-- Loading State -->
+        <div class="loading-container" id="loadingContainer">
+          <div class="status-card">
+            <div class="status-card-body">
+              <div
+                class="spinner-border text-primary"
+                role="status"
+                style="width: 3rem; height: 3rem"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <p class="mt-3 mb-0">Memuat transaksi Anda...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content State -->
+        <div class="content-container" id="contentContainer">
+          <div class="status-card">
+            <div class="status-card-header">
+              <i class="bi bi-check-circle success-icon"></i>
+              <h1>Transaksi Berhasil!</h1>
+              <p class="text-muted mb-0">
+                Terima kasih telah berbelanja di TuanMuda
+              </p>
+            </div>
+            <div class="status-card-body">
+              <div class="result-card">
+                <div class="text-center mb-3">
+                  <span class="status-badge" id="statusBadge">PENDING</span>
+                </div>
+
+                <div class="info-row">
+                  <span class="info-label">Order ID</span>
+                  <span class="info-value" id="resultOrderId">-</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Produk</span>
+                  <span class="info-value" id="resultProduct">-</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Item</span>
+                  <span class="info-value" id="resultItem">-</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Total Pembayaran</span>
+                  <span class="info-value" id="resultTotal">-</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Metode Pembayaran</span>
+                  <span class="info-value" id="resultPayment">-</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-label">Tanggal Transaksi</span>
+                  <span class="info-value" id="resultDate">-</span>
+                </div>
+
+                <!-- Status Messages -->
+                <div id="statusMessage" class="alert mt-3">
+                  <i class="bi bi-clock-history"></i>
+                  <strong>Status: Menunggu Pembayaran</strong><br />
+                  Silakan selesaikan pembayaran Anda. Transaksi akan diproses
+                  setelah pembayaran dikonfirmasi.
+                </div>
+
+                <!-- Cancel Button (only show if pending) -->
+                <div id="cancelButtonContainer">
+                  <button class="btn-cancel" onclick="cancelTransaction()">
+                    <i class="bi bi-x-circle"></i> Batalkan Transaksi
+                  </button>
+                </div>
+
+                <!-- Back to Home Button -->
+                <a href="index.html" class="btn-home">
+                  <i class="bi bi-house"></i> Kembali ke Beranda
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info Card -->
+          <div class="status-card mt-3">
+            <div class="status-card-body">
+              <h6 class="fw-bold mb-3">
+                <i class="bi bi-info-circle"></i> Informasi Status
+              </h6>
+              <div class="mb-2">
+                <span
+                  class="status-badge status-pending"
+                  style="font-size: 0.9rem; padding: 0.25rem 0.75rem"
+                  >PENDING</span
+                >
+                <span class="ms-2 text-muted"
+                  >Menunggu konfirmasi pembayaran</span
+                >
+              </div>
+              <div class="mb-2">
+                <span
+                  class="status-badge status-success"
+                  style="font-size: 0.9rem; padding: 0.25rem 0.75rem"
+                  >SUCCESS</span
+                >
+                <span class="ms-2 text-muted"
+                  >Pembayaran berhasil, item telah dikirim</span
+                >
+              </div>
+              <div>
+                <span
+                  class="status-badge status-failed"
+                  style="font-size: 0.9rem; padding: 0.25rem 0.75rem"
+                  >FAILED</span
+                >
+                <span class="ms-2 text-muted"
+                  >Pembayaran gagal atau dibatalkan</span
+                >
+              </div>
+              <hr />
+              <small class="text-muted">
+                <i class="bi bi-bookmark"></i>
+                <strong>Simpan Order ID Anda!</strong><br />
+                Anda dapat mengecek status transaksi kapan saja dengan Order ID
+                ini.
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error State -->
+        <div class="content-container" id="errorContainer">
+          <div class="status-card">
+            <div class="status-card-body text-center">
+              <i
+                class="bi bi-exclamation-triangle"
+                style="font-size: 4rem; color: #dc3545"
+              ></i>
+              <h3 class="mt-3">Transaksi Tidak Ditemukan</h3>
+              <p class="text-muted">
+                Order ID tidak valid atau transaksi tidak ditemukan.
+              </p>
+              <a href="index.html" class="btn btn-primary mt-3">
+                <i class="bi bi-house"></i> Kembali ke Beranda
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let currentOrderId = "";
+      let currentStatus = "";
+
+      // Auto load saat halaman dibuka
+      window.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get("order_id");
+
+        if (orderId) {
+          checkStatus(orderId);
+        } else {
+          // Tidak ada order_id di URL
+          showError();
+        }
+      });
+
+      async function checkStatus(orderId) {
+        try {
+          const response = await fetch(
+            `backend/check_status.php?order_id=${orderId}`
+          );
+          const result = await response.json();
+
+          if (result.success) {
+            displayResult(result.data);
+          } else {
+            showError();
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          showError();
+        }
+      }
+
+      function displayResult(data) {
+        currentOrderId = data.order_id;
+        currentStatus = data.status;
+
+        // Hide loading, show content
+        document.getElementById("loadingContainer").classList.add("hide");
+        document.getElementById("contentContainer").classList.add("show");
+
+        // Set status badge
+        const statusBadge = document.getElementById("statusBadge");
+        statusBadge.textContent = data.status.toUpperCase();
+        statusBadge.className = `status-badge status-${data.status}`;
+
+        // Set transaction details
+        document.getElementById("resultOrderId").textContent = data.order_id;
+        document.getElementById("resultProduct").textContent =
+          data.product_name;
+        document.getElementById("resultItem").textContent = data.item_name;
+        document.getElementById("resultTotal").textContent =
+          "Rp" + parseInt(data.total_price).toLocaleString("id-ID");
+        document.getElementById("resultPayment").textContent =
+          data.payment_method;
+        document.getElementById("resultDate").textContent = new Date(
+          data.created_at
+        ).toLocaleString("id-ID");
+
+        // Update status message and cancel button
+        const cancelContainer = document.getElementById(
+          "cancelButtonContainer"
+        );
+        const statusMessage = document.getElementById("statusMessage");
+
+        if (data.status === "pending") {
+          cancelContainer.style.display = "block";
+          statusMessage.className = "alert alert-warning mt-3";
+          statusMessage.innerHTML = `
+                    <i class="bi bi-clock-history"></i> 
+                    <strong>Status: Menunggu Pembayaran</strong><br>
+                    Silakan selesaikan pembayaran Anda. Transaksi akan diproses setelah pembayaran dikonfirmasi.
+                `;
+        } else if (data.status === "success") {
+          cancelContainer.style.display = "none";
+          statusMessage.className = "alert alert-success mt-3";
+          statusMessage.innerHTML = `
+                    <i class="bi bi-check-circle"></i> 
+                    <strong>Pembayaran Berhasil!</strong><br>
+                    Item telah dikirim ke akun Anda. Selamat bermain!
+                `;
+        } else if (data.status === "failed") {
+          cancelContainer.style.display = "none";
+          statusMessage.className = "alert alert-danger mt-3";
+          statusMessage.innerHTML = `
+                    <i class="bi bi-x-circle"></i> 
+                    <strong>Transaksi Gagal/Dibatalkan</strong><br>
+                    Silakan hubungi admin jika ada pertanyaan atau lakukan transaksi baru.
+                `;
+        }
+      }
+
+      function showError() {
+        document.getElementById("loadingContainer").classList.add("hide");
+        document.getElementById("errorContainer").classList.add("show");
+      }
+
+      async function cancelTransaction() {
+        if (
+          !confirm(
+            `Yakin ingin membatalkan transaksi ${currentOrderId}?\n\nTransaksi yang dibatalkan tidak dapat dikembalikan.`
+          )
+        ) {
+          return;
+        }
+
+        try {
+          const response = await fetch("backend/cancel_transaction.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              order_id: currentOrderId,
+            }),
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            alert("✅ Transaksi berhasil dibatalkan!");
+
+            // Reload halaman untuk update status
+            location.reload();
+          } else {
+            alert(`❌ ${result.message}`);
+          }
+        } catch (error) {
+          alert("❌ Terjadi kesalahan saat membatalkan transaksi.");
+          console.error("Error:", error);
+        }
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
